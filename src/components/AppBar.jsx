@@ -42,13 +42,13 @@ function ResponsiveAppBar({setLogout}) {
   const handleCloseUserMenu = (e) => {
     setAnchorElUser(null);
     if (e.target.textContent === settings[0]) {
-      setLogout();
+      localStorage.removeItem("token"); // <<< BORRAR el token
       navigate("/");
-    }
-    else if (e.target.textContent === settings[1]) {
+    } else if (e.target.textContent === settings[1]) {
       navigate("/");
     }
   };
+  
 
   return (
     <AppBar position="static">
